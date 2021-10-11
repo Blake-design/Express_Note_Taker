@@ -1,6 +1,0 @@
-{
-  "watch": ["server"],
-  "ext": "js",
-  "ignore": ["*.db.json"],
-  "delay": "3"
-}

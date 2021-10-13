@@ -22,7 +22,11 @@ module.exports = (app) => {
     });
 
     app.delete("/api/notes/:id", function (req, res) {
-      notes.splice(req.params.id, 1);
+      for (i = 0; i < notes.length; i++) {
+        if (req.params.id === notes[i].id) {
+          notes.splice(i, 1);
+        }
+      }
       updateDb();
       console.log("Deleted note with id " + req.params.id);
       res.json(notes);
